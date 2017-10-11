@@ -1,0 +1,16 @@
+ATS.Cadastro.Application/bin/
+ATS.Cadastro.Application/obj/
+ATS.Cadastro.Domain/bin/
+ATS.Cadastro.Domain/obj/
+ATS.Cadastro.Infra.CrossCutting.Identity/bin/
+ATS.Cadastro.Infra.CrossCutting.Identity/obj/
+ATS.Cadastro.Infra.CrossCutting.IoC/bin/
+ATS.Cadastro.Infra.Data/bin/
+ATS.Cadastro.Infra.Data/obj/
+ATS.Core.Domain/bin/
+ATS.Core.Domain/obj/
+ATS.Presentation.Web/bin/
+ATS.Presentation.Web/obj/
+ATS.Presentation.WFA/bin/
+ATS.Presentation.WFA/obj/
+ATS.Cadastro.Infra.CrossCutting.IoC/obj/

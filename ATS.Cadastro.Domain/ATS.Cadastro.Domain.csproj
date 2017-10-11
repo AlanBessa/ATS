@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0A99B8B2-DEA1-4C3C-8507-4997BBC674F4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ATS.Cadastro.Domain</RootNamespace>
+    <AssemblyName>ATS.Cadastro.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DomainValidation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\DomainValidation.1.0.0\lib\net451\DomainValidation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Agendas\Entidades\Agenda.cs" />
+    <Compile Include="Agendas\Interfaces\Repositories\IAgendaRepository.cs" />
+    <Compile Include="Agendas\Interfaces\Services\IAgendaService.cs" />
+    <Compile Include="Agendas\Scopes\AgendaScopes.cs" />
+    <Compile Include="Agendas\Services\AgendaService.cs" />
+    <Compile Include="Base\BaseService.cs" />
+    <Compile Include="Contatos\Entidades\Contato.cs" />
+    <Compile Include="Contatos\Eventos\ContatoCadastroEvent.cs" />
+    <Compile Include="Contatos\Handlers\ContatoCadastradoHandler.cs" />
+    <Compile Include="Contatos\Interfaces\Repositories\IContatoRepository.cs" />
+    <Compile Include="Contatos\Interfaces\Services\IContatoService.cs" />
+    <Compile Include="Contatos\Scopes\ContatoScopes.cs" />
+    <Compile Include="Contatos\Services\ContatoService.cs" />
+    <Compile Include="Enderecos\Entidades\CEP.cs" />
+    <Compile Include="Enderecos\Entidades\Cidade.cs" />
+    <Compile Include="Enderecos\Entidades\Endereco.cs" />
+    <Compile Include="Enderecos\Entidades\EnderecoId.cs" />
+    <Compile Include="Enderecos\Entidades\Estado.cs" />
+    <Compile Include="Enderecos\Interfaces\Repositories\ICidadeRepository.cs" />
+    <Compile Include="Enderecos\Interfaces\Repositories\IEnderecoRepository.cs" />
+    <Compile Include="Enderecos\Interfaces\Repositories\IEstadoRepository.cs" />
+    <Compile Include="Enderecos\Interfaces\Services\ICidadeService.cs" />
+    <Compile Include="Enderecos\Interfaces\Services\IEnderecoService.cs" />
+    <Compile Include="Enderecos\Interfaces\Services\IEstadoService.cs" />
+    <Compile Include="Enderecos\Scopes\EnderecoScopes.cs" />
+    <Compile Include="Enderecos\Services\CidadeService.cs" />
+    <Compile Include="Enderecos\Services\EnderecoService.cs" />
+    <Compile Include="Enderecos\Services\EstadoService.cs" />
+    <Compile Include="Funcionarios\Entidades\Cargo.cs" />
+    <Compile Include="Funcionarios\Entidades\Funcionario.cs" />
+    <Compile Include="Funcionarios\Entidades\HistoricoDeCargo.cs" />
+    <Compile Include="Funcionarios\Interfaces\Repositories\ICargoRepository.cs" />
+    <Compile Include="Funcionarios\Interfaces\Repositories\IFuncionarioRepository.cs" />
+    <Compile Include="Funcionarios\Interfaces\Repositories\IHistoricoDeCargoRepository.cs" />
+    <Compile Include="Funcionarios\Interfaces\Services\ICargoService.cs" />
+    <Compile Include="Funcionarios\Interfaces\Services\IFuncionarioService.cs" />
+    <Compile Include="Funcionarios\Interfaces\Services\IHistoricoDeCargoService.cs" />
+    <Compile Include="Funcionarios\Scopes\CargoScopes.cs" />
+    <Compile Include="Funcionarios\Scopes\FuncionarioScopes.cs" />
+    <Compile Include="Funcionarios\Scopes\HistoricoDeCargoScopes.cs" />
+    <Compile Include="Funcionarios\Services\CargoService.cs" />
+    <Compile Include="Funcionarios\Services\FuncionarioService.cs" />
+    <Compile Include="Funcionarios\Services\HistoricoDeCargoService.cs" />
+    <Compile Include="Impostos\Entidades\Cofins.cs" />
+    <Compile Include="Impostos\Entidades\Ipi.cs" />
+    <Compile Include="Impostos\Entidades\Pis.cs" />
+    <Compile Include="Impostos\Entidades\SitTributaria.cs" />
+    <Compile Include="Impostos\Entidades\Tributacao.cs" />
+    <Compile Include="Impostos\Interfaces\Repositories\ICofinsRepository.cs" />
+    <Compile Include="Impostos\Interfaces\Repositories\IIpiRepository.cs" />
+    <Compile Include="Impostos\Interfaces\Repositories\IPisRepository.cs" />
+    <Compile Include="Impostos\Interfaces\Repositories\ISitTributariaRepository.cs" />
+    <Compile Include="Impostos\Interfaces\Repositories\ITributacaoRepository.cs" />
+    <Compile Include="Impostos\Interfaces\Services\ICofinsService.cs" />
+    <Compile Include="Impostos\Interfaces\Services\IIpiService.cs" />
+    <Compile Include="Impostos\Interfaces\Services\IPisService.cs" />
+    <Compile Include="Impostos\Interfaces\Services\ISitTributariaService.cs" />
+    <Compile Include="Impostos\Interfaces\Services\ITributacaoService.cs" />
+    <Compile Include="Impostos\Scopes\CofinsScopes.cs" />
+    <Compile Include="Impostos\Scopes\IpiScopes.cs" />
+    <Compile Include="Impostos\Scopes\PisScopes.cs" />
+    <Compile Include="Impostos\Scopes\SitTributariaScopes.cs" />
+    <Compile Include="Impostos\Scopes\TributacaoScopes.cs" />
+    <Compile Include="Impostos\Services\CofinsService.cs" />
+    <Compile Include="Impostos\Services\IpiService.cs" />
+    <Compile Include="Impostos\Services\PisService.cs" />
+    <Compile Include="Impostos\Services\SitTributariaService.cs" />
+    <Compile Include="Impostos\Services\TributacaoService.cs" />
+    <Compile Include="MeiosDeComunicacoes\Entidades\MeioDeComunicacao.cs" />
+    <Compile Include="MeiosDeComunicacoes\Entidades\TipoDeMeioDeComunicacao.cs" />
+    <Compile Include="MeiosDeComunicacoes\Interfaces\Repositories\IMeioDeComunicacaoRepository.cs" />
+    <Compile Include="MeiosDeComunicacoes\Interfaces\Repositories\ITipoDeMeioDeComunicacaoRepository.cs" />
+    <Compile Include="MeiosDeComunicacoes\Interfaces\Services\IMeioDeComunicacaoService.cs" />
+    <Compile Include="MeiosDeComunicacoes\Interfaces\Services\ITipoDeMeioDeComunicacaoService.cs" />
+    <Compile Include="MeiosDeComunicacoes\Scopes\MeioDeComunicacaoScopes.cs" />
+    <Compile Include="MeiosDeComunicacoes\Services\MeioDeComunicacaoService.cs" />
+    <Compile Include="MeiosDeComunicacoes\Services\TipoDeMeioDeComunicacaoService.cs" />
+    <Compile Include="Pessoas\Entidades\Pessoa.cs" />
+    <Compile Include="Pessoas\Entidades\PessoaFisica.cs" />
+    <Compile Include="Pessoas\Entidades\PessoaJuridica.cs" />
+    <Compile Include="Pessoas\Events\PessoaFisicaCadastradaEvent.cs" />
+    <Compile Include="Pessoas\Handlers\PessoaFisicaCadastradaHandler.cs" />
+    <Compile Include="Pessoas\Interfaces\Repositories\IPessoaFisicaRepository.cs" />
+    <Compile Include="Pessoas\Interfaces\Repositories\IPessoaJuridicaRepository.cs" />
+    <Compile Include="Pessoas\Interfaces\Services\IPessoaFisicaService.cs" />
+    <Compile Include="Pessoas\Interfaces\Services\IPessoaJuridicaService.cs" />
+    <Compile Include="Pessoas\Scopes\PessoaFisicaScopes.cs" />
+    <Compile Include="Pessoas\Scopes\PessoaJuridicaScopes.cs" />
+    <Compile Include="Pessoas\Services\PessoaFisicaService.cs" />
+    <Compile Include="Pessoas\Services\PessoaJuridicaService.cs" />
+    <Compile Include="Pessoas\Specifications\PessoaFisicaDevePossuirCPFUnicoSpecification.cs" />
+    <Compile Include="Pessoas\Specifications\PessoaFisicaDevePossuirRGUnicoSpecification.cs" />
+    <Compile Include="Pessoas\Specifications\PessoaJuridicaDevePossuirCNPJUnicoSpecification.cs" />
+    <Compile Include="Pessoas\Validations\PessoaFisicaAptaParaCadastroValidation.cs" />
+    <Compile Include="Pessoas\Validations\PessoaFisicaAptaParaEdicaoValidation.cs" />
+    <Compile Include="Pessoas\Validations\PessoaJuridicaAptaParaCadastroValidation.cs" />
+    <Compile Include="Processo\Entidades\Entrada.cs" />
+    <Compile Include="Processo\Entidades\Fornecedor.cs" />
+    <Compile Include="Processo\Entidades\FornecedorPessoaFisica.cs" />
+    <Compile Include="Processo\Entidades\FornecedorPessoaJuridica.cs" />
+    <Compile Include="Processo\Entidades\Transportadora.cs" />
+    <Compile Include="Processo\Entidades\TransportadoraPessoaFisica.cs" />
+    <Compile Include="Processo\Entidades\TransportadoraPessoaJuridica.cs" />
+    <Compile Include="Processo\Scopes\FornecedorPessoaFisicaScopes.cs" />
+    <Compile Include="Processo\Scopes\FornecedorPessoaJuridicaScopes.cs" />
+    <Compile Include="Processo\Scopes\TransportadoraPessoaFisicaScopes.cs" />
+    <Compile Include="Processo\Scopes\TransportadoraPessoaJuridicaScopes.cs" />
+    <Compile Include="Produtos\Entidades\Cor.cs" />
+    <Compile Include="Produtos\Entidades\Fabricante.cs" />
+    <Compile Include="Produtos\Entidades\Grupo.cs" />
+    <Compile Include="Produtos\Entidades\Produto.cs" />
+    <Compile Include="Produtos\Entidades\Marca.cs" />
+    <Compile Include="Produtos\Entidades\ItemProduto.cs" />
+    <Compile Include="Produtos\Entidades\Tamanho.cs" />
+    <Compile Include="Produtos\Entidades\TamanhoValor.cs" />
+    <Compile Include="Produtos\Interfaces\Repositories\ICorRepository.cs" />
+    <Compile Include="Produtos\Interfaces\Repositories\IFabricanteRepository.cs" />
+    <Compile Include="Produtos\Interfaces\Repositories\IMarcaRepository.cs" />
+    <Compile Include="Produtos\Interfaces\Services\ICorService.cs" />
+    <Compile Include="Produtos\Interfaces\Services\IFabricanteService.cs" />
+    <Compile Include="Produtos\Interfaces\Services\IMarcaService.cs" />
+    <Compile Include="Produtos\Scopes\CorScopes.cs" />
+    <Compile Include="Produtos\Scopes\FabricanteScopes.cs" />
+    <Compile Include="Produtos\Scopes\MarcaScopes.cs" />
+    <Compile Include="Produtos\Scopes\TamanhoScopes.cs" />
+    <Compile Include="Produtos\Scopes\TamanhoValorScopes.cs" />
+    <Compile Include="Produtos\Services\CorService.cs" />
+    <Compile Include="Produtos\Services\FabricanteService.cs" />
+    <Compile Include="Produtos\Services\MarcaService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Agendas\Eventos\" />
+    <Folder Include="Agendas\Handlers\" />
+    <Folder Include="Enderecos\Interfaces\Handlers\" />
+    <Folder Include="Funcionarios\Interfaces\Handlers\" />
+    <Folder Include="MeiosDeComunicacoes\Interfaces\Handlers\" />
+    <Folder Include="Pessoas\Interfaces\Handlers\" />
+    <Folder Include="Transportadoras\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ATS.Core.Domain\ATS.Core.Domain.csproj">
+      <Project>{85467502-3d66-4f1d-a14a-c6601dca104f}</Project>
+      <Name>ATS.Core.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

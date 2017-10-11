@@ -1,0 +1,70 @@
+﻿@model ATS.Cadastro.Application.ViewModels.PessoaJuridica.EditarPessoaJuridicaViewModel
+
+<div class="modal fade" tabindex="-1" role="dialog" id="enderecoModal" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Cadastro de Endereço</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="form-group">
+                            <label class="control-label">Logradouro: *</label>
+                            @Html.TextBoxFor(m => m.DadosDeEndereco.Logradouro, new { @class = "form-control logradouro" })
+                            <span id="logradouroErro" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label class="control-label">Número: *</label>
+                            @Html.TextBoxFor(m => m.DadosDeEndereco.Numero, new { @class = "form-control numero" })
+                            <span id="numeroErro" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label class="control-label">Complemento:</label>
+                            @Html.TextBoxFor(m => m.DadosDeEndereco.Complemento, new { @class = "form-control complemento" })
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label class="control-label">Bairro: *</label>
+                            @Html.TextBoxFor(m => m.DadosDeEndereco.Bairro, new { @class = "form-control bairro" })
+                            <span id="bairroErro" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="control-label">Cidade: *</label>
+                            @Html.DropDownListFor(m => m.DadosDeEndereco.CidadeId, Model.CidadeList, new { @class = "form-control selectpickerOneOption cidade", @size = "2" })
+                            <span id="cidadeErro" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label class="control-label">Estado: *</label>
+                            @Html.DropDownListFor(m => m.DadosDeEndereco.EstadoId, Model.EstadoList, new { @class = "form-control selectpickerEstado estado", @size = "2" })
+                            <span id="estadoErro" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label class="control-label">CEP:</label>
+                            @Html.TextBoxFor(m => m.DadosDeEndereco.Cep, new { @class = "form-control cep" })
+                            <span id="cepErro" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-primary btnSalvarEndereco">Salvar</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
